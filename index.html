@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vestido y enguantado del personal que entra a cirugia</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<video class="bg" autoplay muted loop>
+  <source src="utils\video\videovestido.mp4" type="video/webm">
+</video>
+
+<div class="overlay" id="startScreen">
+  <div class="blur-box">
+    <img src="utils/imgs/logo.webp" class="logo"/>
+    <h1>Vestido y enguantado del personal que entra a cirugía</h1>
+  </br>
+    <h2>🏆 Mejor puntaje: <span id="highScore">0</span></h2>
+     </br>
+    <button class="btn-primary" onclick="startGame()">Iniciar</button>
+  </div>
+</div>
+
+<div class="game" id="game">
+  <div class="blur-box">
+
+    <!-- Icono de ayuda -->
+    <div class="help-icon">?
+      <div class="help-tooltip">
+        Arrastra la imagen a la zona de respuesta.<br>
+        Si no es la correcta, puedes regresarla a su lugar.
+      </div>
+    </div>
+
+    <div class="score">Puntos: <span id="score">0</span></div>
+    <div class="progress"><div class="progress-bar" id="progressBar"></div></div>
+    <div class="timer">⏳ Tiempo: <span id="timeLeft">15</span>s</div>
+    <div class="question" id="question"></div>
+    <div class="dropzones" id="dropzones"></div>
+    <div class="options" id="options"></div>
+    <div id="feedback"></div>
+    <button id="confirmBtn" class="btn-primary" onclick="checkAnswer()">Confirmar</button>
+  </div>
+</div>
+
+<div id="resultModal">
+  <div class="content">
+    <h2>¡Juego Terminado!</h2>
+    <p>Puntaje final: <span id="finalScore">0</span></p>
+    <p>🏆 Mejor puntaje: <span id="bestScore">0</span></p>
+    <p id="scoreMessage" style="margin-top:15px;font-size:18px;"></p>
+    <button class="btn-primary" onclick="retry()">Reintentar</button>
+    <button class="btn-secondary" onclick="exitGame()">Salir</button>
+  </div>
+</div>
+
+<audio id="correctSound" src="utils\audio\correct.mp3"></audio>
+<audio id="incorrectSound" src="utils\audio\incorrect.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
